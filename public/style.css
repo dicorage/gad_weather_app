@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+body{
+    background-image: linear-gradient(#3279E2,#32C4DB);
+    background-image: -webkit-linear-gradient(#3279E2,#32C4DB);
+    background-image: -moz-linear-gradient(#3279E2,#32C4DB);
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+}
+
+main{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.muted_white_text{
+    color: rgba(255, 255, 255, .6);
+}
+
+.mt_20{
+   margin-top: 20px; 
+}
+
+.pd_20{
+    padding-top: 20px;
+}
+
+.flex_space_between{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.weather_section{
+    border-radius: 1em;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    padding: 15px 50px 30px;
+}
+
+.main_summary{
+    background-color: rgba(255, 255, 255, .3);
+    color: #fff;
+}
+
+.main_summary .city{
+    font-size: 1.4em;
+    padding-bottom: 5px;
+}
+
+.main_summary .temprature{
+    font-size: 6em;
+}
+
+.main_summary .condition{
+    font-size: 1.7em;
+    font-weight: 500;
+}
+
+.main_summary .temprature sup{
+    font-size: 0.6em;
+}
+
+.main_summary .main_icon img{
+    width: 200px;
+}
+
+.other_forecast{
+    background-color: #f9f9f9;
+    overflow-x: scroll;
+}
+
+.other_weather_items{
+    display: flex;
+    justify-content: space-around;
+}
+
+.other_forecast .temprature{
+    font-size: 2.4em;
+    font-weight: 500;
+    color : #3279E2;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.small_icon{
+    margin-bottom: 5px;
+}
+
+.search_box{
+    max-width: 500px;
+    width: 100%;
+    padding: 20px 0px 0px;
+    margin: auto;
+}
+
+.search_box input{
+    padding: 15px 0;
+    border-radius: 3em 3em;
+    background-color: rgba(255, 255, 255, .3);
+    border: 0;
+    width: 100%;
+    text-align: center;
+    caret-color: rgba(255, 255, 255, .8);
+    color: rgba(255, 255, 255, .8);
+}
+
+.search_box input::placeholder{
+    color: rgba(255, 255, 255, .8);
+}
+
+.search_box input:focus{
+    border: 0;
+    outline-style: none;
+}
+
+@media only screen and (max-width: 600px) {
+    .weather_section{
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .other_weather{
+        display: inline-block;
+        min-width: 150px;
+    }
+  }
