@@ -12,8 +12,7 @@ body{
 }
 
 main{
-    padding-left: 15px;
-    padding-right: 15px;
+    padding: 20px 15px;
 }
 
 .muted_white_text{
@@ -50,11 +49,11 @@ main{
 
 .main_summary .city{
     font-size: 1.4em;
-    padding-bottom: 5px;
 }
 
 .main_summary .temprature{
     font-size: 6em;
+    line-height: 1em;
 }
 
 .main_summary .condition{
@@ -72,20 +71,39 @@ main{
 
 .other_forecast{
     background-color: #f9f9f9;
-    overflow-x: scroll;
 }
 
 .other_weather_items{
+    display: block;
+    justify-content: space-between;
+}
+
+.other_weather_items .weather_list{
     display: flex;
     justify-content: space-around;
 }
 
+.other_weather_items ul{
+    padding-left: 0;
+    width: 100%;
+    padding-right: 20px;
+}
+
+.other_weather_items ul li{
+    list-style-type: none;
+    padding: 15px 5px 20px;
+    border-bottom: 1px solid #efefef;
+    display: flex;
+    justify-content: space-between;
+}
+
 .other_forecast .temprature{
-    font-size: 2.4em;
+    font-size: 3em;
     font-weight: 500;
     color : #3279E2;
-    margin-top: 10px;
+    margin-top: 0px;
     margin-bottom: 5px;
+    line-height: 0.8em;
 }
 
 .small_icon{
@@ -118,6 +136,7 @@ main{
     border: 0;
     outline-style: none;
 }
+
 
 @media only screen and (max-width: 600px) {
     .weather_section{
