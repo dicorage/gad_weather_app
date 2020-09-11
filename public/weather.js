@@ -7,8 +7,10 @@ function getCurrentWeatherByCity(query){
         if (this.readyState == 4 && this.status == 200) {
             const response = JSON.parse(this.responseText);
             displayMainSummary(response);
-        }else{
-            showFailed();
+        }
+
+        if (this.readyState == 4 && this.status != 200) {
+            displayFailed();
         }
     };
     xhttp.open("GET", url, true);
@@ -25,8 +27,10 @@ function getCurrentWeatherByCoordinates(position){
             const response = JSON.parse(this.responseText);
             displayMainSummary(response);
             displayOtherDetails(response);
-        }else{
-            showFailed();
+        }
+
+        if (this.readyState == 4 && this.status != 200) {
+            displayFailed();
         }
     };
     xhttp.open("GET", url, true);
