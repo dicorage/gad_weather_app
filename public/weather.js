@@ -7,6 +7,7 @@ function getCurrentWeatherByCity(query){
         if (this.readyState == 4 && this.status == 200) {
             const response = JSON.parse(this.responseText);
             displayMainSummary(response);
+            displayOtherDetails(response);
         }
 
         if (this.readyState == 4 && this.status != 200) {
