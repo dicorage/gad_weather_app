@@ -11,7 +11,7 @@ function getCurrentWeatherByCity(query){
         }
 
         if (this.readyState == 4 && this.status != 200) {
-            displayFailed();
+            showFailed();
         }
     };
     xhttp.open("GET", url, true);
@@ -31,7 +31,7 @@ function getCurrentWeatherByCoordinates(position){
         }
 
         if (this.readyState == 4 && this.status != 200) {
-            displayFailed();
+            showFailed();
         }
     };
     xhttp.open("GET", url, true);
