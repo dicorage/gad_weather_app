@@ -110,6 +110,18 @@ main{
     margin-bottom: 5px;
 }
 
+.loading {
+    width: 200px;
+    font-size: 60px;
+    margin: auto;
+    text-align: center;
+}
+
+.error {
+    font-size: 28px;
+    text-align: center;
+}
+
 .search_box{
     max-width: 500px;
     width: 100%;
