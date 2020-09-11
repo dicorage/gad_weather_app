@@ -1,5 +1,5 @@
 const searchForm = document.getElementById('search_form');
-const baseURL = "htts://api.openweathermap.org/data/2.5/";
+const baseURL = "https://api.openweathermap.org/data/2.5/";
 const apiKey = "0ac52289e818f164acc93f26540648a1";
 const mainSummary = document.getElementById('main_summary');
 const otherDetails = document.getElementById('other_details');
