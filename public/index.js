@@ -39,7 +39,9 @@ function displayMainSummary(response){
     let weather = response.weather[0];
     let description = weather.description;
     let image = getWeatherImage(weather);
-    if(today.getHours() > 19 && today.getHours() < 6){
+    if(today.getHours() > 18.59){
+        image += "_night";
+    }else if(today.getHours() < 5.59){
         image += "_night";
     }
     let name = response.name;
