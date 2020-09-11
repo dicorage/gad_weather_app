@@ -1,7 +1,7 @@
 function getCurrentWeatherByCity(query){
     
     let url = baseURL+'weather/'+'?q='+query+'&appid='+apiKey+'&units=metric';
-    console.log(url);
+    // console.log(url);
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -21,7 +21,7 @@ function getCurrentWeatherByCity(query){
 function getCurrentWeatherByCoordinates(position){
     
     let url = baseURL+'weather/'+'?lat='+position.coords.latitude+'&lon='+position.coords.longitude+'&appid='+apiKey+'&units=metric';
-    console.log(url);
+    // console.log(url);
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
@@ -39,26 +39,44 @@ function getCurrentWeatherByCoordinates(position){
 }
 
 function getWeatherImage(weather){
+    const today = new Date();
+
     if(weather.main == "Thunderstorm"){
         if(weather.description.includes('light') || weather.description.includes('drizzle')){
-            return "scattered_thunderstorm";
+            image = "scattered_thunderstorm";
         }else if(weather.description.includes('heavy')){
-            return "severe_thunderstorm";
+            image = "severe_thunderstorm";
         }else{
-            return "scattered_thunderstorm";
+            image = "scattered_thunderstorm";
         }
+
+        if(today.getHours() > 18.59){
+            image += "_night";
+        }else if(today.getHours() < 5.59){
+            image += "_night";
+        }
+
+        return image;
     }
 
     if(weather.main == "Clouds"){
         if(weather.description.includes('overcast')){
-            return "mostly_cloudy";
+            image = "mostly_cloudy";
         }else if(weather.description.includes('scattered')){
-            return "partly_cloudy";
+            image = "partly_cloudy";
         }else if(weather.description.includes('broken')){
-            return "partly_cloudy";
+            image = "partly_cloudy";
         }else{
-            return "partly_cloudy";
+            image = "partly_cloudy";
         }
+
+        if(today.getHours() > 18.59){
+            image += "_night";
+        }else if(today.getHours() < 5.59){
+            image += "_night";
+        }
+
+        return image;
     }
 
     if(weather.main == "Drizzle"){
@@ -67,24 +85,54 @@ function getWeatherImage(weather){
 
     if(weather.main == "Rain"){
         if(weather.description.includes('light') || weather.description.includes('shower')){
-            return "light_rain";
+            image = "light_rain";
         }else if(weather.description.includes('heavy')){
-            return "heavy_rain";
+            image = "heavy_rain";
         }else{
-            return "rain";
+            image = "rain";
         }
+
+        if(today.getHours() > 18.59){
+            image += "_night";
+        }else if(today.getHours() < 5.59){
+            image += "_night";
+        }
+
+        return image;
     }
 
     if(weather.main == "Clear"){
-        return "clear";
+        image = "clear";
+
+        if(today.getHours() > 18.59){
+            image += "_night";
+        }else if(today.getHours() < 5.59){
+            image += "_night";
+        }
+
+        return image;
     }
 
     if(weather.main == "Snow"){
-        return "snow";
+        image = "snow";
+        if(today.getHours() > 18.59){
+            image += "_night";
+        }else if(today.getHours() < 5.59){
+            image += "_night";
+        }
+
+        return image;
     }
 
     if(weather.main == "Snow"){
-        return "snow";
+        image = "snow";
+        if(today.getHours() > 18.59){
+            image += "_night";
+        }else if(today.getHours() < 5.59){
+            image += "_night";
+        }
+
+        return image;
     }
 
     return weather.main.toLowerCase();
